@@ -44,7 +44,7 @@ def get_file(fname, origin, untar=False,
     if not os.access(datadir_base, os.W_OK):
         datadir_base = os.path.join('/tmp', '.keras')
     datadir = os.path.join(datadir_base, cache_subdir)
-    if not os.path.exists(datadir):
+    if not os.path.lexists(datadir):
         os.makedirs(datadir)
 
     if untar:
